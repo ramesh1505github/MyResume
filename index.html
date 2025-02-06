@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramesh | PHP Laravel Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        .hero {
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?technology,coding') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .skills .progress {
+            height: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1 class="display-4 fw-bold">Hi, I'm Ramesh</h1>
+        <p class="lead">PHP & Laravel Developer in Trichy</p>
+        <a href="#about" class="btn btn-primary mt-3">Know More</a>
+    </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="container py-5">
+    <h2 class="text-center">About Me</h2>
+    <div class="row align-items-center mt-4">
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/ramesh.png') }}" class="rounded-circle img-fluid" alt="Ramesh">
+        </div>
+        <div class="col-md-8">
+            <p>I'm a passionate PHP and Laravel Developer based in Trichy, working at Skap Technologies. I love building scalable web applications and solving complex backend problems.</p>
+            <p>With experience in MySQL, REST APIs, and modern web technologies, I always strive to improve performance and code quality.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="container py-5 skills">
+    <h2 class="text-center">Skills</h2>
+    <div class="mt-4">
+        <label>PHP & Laravel</label>
+        <div class="progress"><div class="progress-bar bg-success" style="width: 90%;">90%</div></div>
+        <label>MySQL & Database Design</label>
+        <div class="progress"><div class="progress-bar bg-info" style="width: 85%;">85%</div></div>
+        <label>JavaScript & jQuery</label>
+        <div class="progress"><div class="progress-bar bg-warning" style="width: 75%;">75%</div></div>
+        <label>API Development</label>
+        <div class="progress"><div class="progress-bar bg-danger" style="width: 80%;">80%</div></div>
+    </div>
+</section>
+
+<!-- Project Gallery -->
+<section class="container py-5">
+    <h2 class="text-center">My Work</h2>
+    <div id="projectCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('images/project1.png') }}" class="d-block w-100" alt="Project 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/project2.png') }}" class="d-block w-100" alt="Project 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/project3.png') }}" class="d-block w-100" alt="Project 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="container py-5 text-center">
+    <h2>Contact Me</h2>
+    <p>Email: <strong>ramsk1505@gmail.com</strong></p>
+    <p>Phone: <strong>+91 86108 50220</strong></p>
+    <a href="mailto:ramesh@skaptechnologies.com" class="btn btn-primary">Send Email</a>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3 bg-dark text-light">
+    &copy; 2025 Ramesh - Laravel Developer | Built with ❤️
+</footer>
+
+<!-- Anime.js Script for Animations -->
+<script>
+    anime.timeline({ loop: false })
+        .add({
+            targets: '.hero h1',
+            translateY: [-50, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 1000
+        })
+        .add({
+            targets: '.hero p, .hero a',
+            translateY: [20, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 1000,
+            delay: 500
+        });
+
+    anime({
+        targets: '.progress-bar',
+        width: (el) => el.style.width,
+        easing: 'easeInOutQuad',
+        duration: 1500,
+        delay: anime.stagger(300)
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
